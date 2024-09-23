@@ -1,0 +1,917 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6596D94-88F7-4BB8-9992-29C10717E743}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KhairTravels</RootNamespace>
+    <AssemblyName>KhairTravels</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44353</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="CarRental.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DoodPathri.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Gallery.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Gulmarg.aspx" />
+    <Content Include="Images\1.png" />
+    <Content Include="Images\10.png" />
+    <Content Include="Images\11.png" />
+    <Content Include="Images\12.png" />
+    <Content Include="Images\13.png" />
+    <Content Include="Images\14.png" />
+    <Content Include="Images\15.png" />
+    <Content Include="Images\16.png" />
+    <Content Include="Images\17.png" />
+    <Content Include="Images\18.png" />
+    <Content Include="Images\19.png" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\20.png" />
+    <Content Include="Images\21.png" />
+    <Content Include="Images\22.png" />
+    <Content Include="Images\23.png" />
+    <Content Include="Images\24.png" />
+    <Content Include="Images\25.png" />
+    <Content Include="Images\26.png" />
+    <Content Include="Images\27.png" />
+    <Content Include="Images\28.png" />
+    <Content Include="Images\29.png" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\30.png" />
+    <Content Include="Images\31.png" />
+    <Content Include="Images\32.png" />
+    <Content Include="Images\33.png" />
+    <Content Include="Images\34.png" />
+    <Content Include="Images\35.png" />
+    <Content Include="Images\36.png" />
+    <Content Include="Images\4.png" />
+    <Content Include="Images\5.png" />
+    <Content Include="Images\6.png" />
+    <Content Include="Images\7.png" />
+    <Content Include="Images\8.png" />
+    <Content Include="Images\9.png" />
+    <Content Include="Images\bg\1.png" />
+    <Content Include="Images\bg\10.png" />
+    <Content Include="Images\bg\11.png" />
+    <Content Include="Images\bg\12.png" />
+    <Content Include="Images\bg\13.png" />
+    <Content Include="Images\bg\14.png" />
+    <Content Include="Images\bg\15.png" />
+    <Content Include="Images\bg\16.png" />
+    <Content Include="Images\bg\17.png" />
+    <Content Include="Images\bg\18.png" />
+    <Content Include="Images\bg\19.png" />
+    <Content Include="Images\bg\2.png" />
+    <Content Include="Images\bg\20.png" />
+    <Content Include="Images\bg\21.png" />
+    <Content Include="Images\bg\22.png" />
+    <Content Include="Images\bg\23.png" />
+    <Content Include="Images\bg\24.png" />
+    <Content Include="Images\bg\25.png" />
+    <Content Include="Images\bg\26.png" />
+    <Content Include="Images\bg\27.png" />
+    <Content Include="Images\bg\28.png" />
+    <Content Include="Images\bg\29.png" />
+    <Content Include="Images\bg\3.png" />
+    <Content Include="Images\bg\30.png" />
+    <Content Include="Images\bg\31.png" />
+    <Content Include="Images\bg\32.png" />
+    <Content Include="Images\bg\33.png" />
+    <Content Include="Images\bg\34.png" />
+    <Content Include="Images\bg\35.png" />
+    <Content Include="Images\bg\4.png" />
+    <Content Include="Images\bg\5.png" />
+    <Content Include="Images\bg\6.png" />
+    <Content Include="Images\bg\7.png" />
+    <Content Include="Images\bg\8.png" />
+    <Content Include="Images\bg\9.png" />
+    <Content Include="Images\Destinations\achabal.jpg" />
+    <Content Include="Images\Destinations\alpather-lake-gulmarg.jpg" />
+    <Content Include="Images\Destinations\amarnath-temple-in-kashmir-banner.jpg" />
+    <Content Include="Images\Destinations\amarnath.jpg" />
+    <Content Include="Images\Destinations\apharwat-peak-gulmarg.jpg" />
+    <Content Include="Images\Destinations\Ardhkuwari Cave.jpg" />
+    <Content Include="Images\Destinations\aru_valley_pahalgam.jpg" />
+    <Content Include="Images\Destinations\Baba Dhansar.jpg" />
+    <Content Include="Images\Destinations\babareshi.jpg" />
+    <Content Include="Images\Destinations\baba_hyder.jpg" />
+    <Content Include="Images\Destinations\background.jpg" />
+    <Content Include="Images\Destinations\baltal.jpg" />
+    <Content Include="Images\Destinations\Ban Ganga.jpg" />
+    <Content Include="Images\Destinations\betaab_valley_pahalgam.jpg" />
+    <Content Include="Images\Destinations\bg %281%29.jpg" />
+    <Content Include="Images\Destinations\bg %282%29.jpg" />
+    <Content Include="Images\Destinations\bg %283%29.jpg" />
+    <Content Include="Images\Destinations\bg %284%29.jpg" />
+    <Content Include="Images\Destinations\bg %285%29.jpg" />
+    <Content Include="Images\Destinations\bg.jpg" />
+    <Content Include="Images\Destinations\Bike.jpg" />
+    <Content Include="Images\Destinations\Board a whopper chopper.jpg" />
+    <Content Include="Images\Destinations\cafe-igloo-gulmarg.jpg" />
+    <Content Include="Images\Destinations\Camel.jpg" />
+    <Content Include="Images\Destinations\catholicchurch.jpg" />
+    <Content Include="Images\Destinations\chandanwari_pahalgam.jpg" />
+    <Content Include="Images\Destinations\Chashma Shahi Srinagar.jpg" />
+    <Content Include="Images\Destinations\chatpal.jpg" />
+    <Content Include="Images\Destinations\childrens-park-gulmarg.jpg" />
+    <Content Include="Images\Destinations\Chrar-e-Sharief, one of the oldest shrines of Kashmir_mobile.jpg" />
+    <Content Include="Images\Destinations\Daksum Anantnag.jpg" />
+    <Content Include="Images\Destinations\Doodh Ganga.jpg" />
+    <Content Include="Images\Destinations\download %281%29.jpg" />
+    <Content Include="Images\Destinations\download %282%29.jpg" />
+    <Content Include="Images\Destinations\download.jpg" />
+    <Content Include="Images\Destinations\Downtown.jpg" />
+    <Content Include="Images\Destinations\Dwell in digital Detox.jpg" />
+    <Content Include="Images\Destinations\Fight the height like a knight.jpg" />
+    <Content Include="Images\Destinations\Fill your gut with walnuts.jpg" />
+    <Content Include="Images\Destinations\Fish in the swishing waters.jpg" />
+    <Content Include="Images\Destinations\gadsar.jpg" />
+    <Content Include="Images\Destinations\gondola-ride.jpg" />
+    <Content Include="Images\Destinations\gulmarg.jpg" />
+    <Content Include="Images\Destinations\Hari_Parbat_Srinagar.jpg" />
+    <Content Include="Images\Destinations\Hemis-National-Park-e1645426889987.jpg" />
+    <Content Include="Images\Destinations\Hemis.jpg" />
+    <Content Include="Images\Destinations\Herd of sheep grazing in the meadows of Yousmarg_desktop.jpg" />
+    <Content Include="Images\Destinations\Hiistoric Haribarbat.jpg" />
+    <Content Include="Images\Destinations\hiking_desktop.jpg" />
+    <Content Include="Images\Destinations\history %281%29.jpg" />
+    <Content Include="Images\Destinations\history %282%29.jpg" />
+    <Content Include="Images\Destinations\history %283%29.jpg" />
+    <Content Include="Images\Destinations\history gulmarg.jpg" />
+    <Content Include="Images\Destinations\history.jpg" />
+    <Content Include="Images\Destinations\history_pahalgam.jpg" />
+    <Content Include="Images\Destinations\hokersar.jpg" />
+    <Content Include="Images\Destinations\horse_desktop.jpg" />
+    <Content Include="Images\Destinations\istockphoto-163658970-612x612.jpg" />
+    <Content Include="Images\Destinations\jamia_masjid.jpg" />
+    <Content Include="Images\Destinations\kathi_darwaza.jpg" />
+    <Content Include="Images\Destinations\kg.jpg" />
+    <Content Include="Images\Destinations\khanqah.jpg" />
+    <Content Include="Images\Destinations\Kheerb.jpg" />
+    <Content Include="Images\Destinations\Kokernag.jpg" />
+    <Content Include="Images\Destinations\ladakh.jpg" />
+    <Content Include="Images\Destinations\ladakh1.jpg" />
+    <Content Include="Images\Destinations\ladakh2.jpg" />
+    <Content Include="Images\Destinations\ladakh3.jpeg" />
+    <Content Include="Images\Destinations\ladakh4.jpeg" />
+    <Content Include="Images\Destinations\lake.jpg" />
+    <Content Include="Images\Destinations\leh-ladakh-indiajune-8-2017-260nw-796094905.jpg" />
+    <Content Include="Images\Destinations\Lidder Mad and Haijan.jpg" />
+    <Content Include="Images\Destinations\lidder_river.jpg" />
+    <Content Include="Images\Destinations\maharani temple.jpg" />
+    <Content Include="Images\Destinations\mamleshwar.jpg" />
+    <Content Include="Images\Destinations\martand.jpg" />
+    <Content Include="Images\Destinations\mugalgraden.jpg" />
+    <Content Include="Images\Destinations\nichnai.jpg" />
+    <Content Include="Images\Destinations\Nigeen Lake.jpg" />
+    <Content Include="Images\Destinations\Nilnag Lake.jpg" />
+    <Content Include="Images\Destinations\Nishat Garden.jpg" />
+    <Content Include="Images\Destinations\nub.jpg" />
+    <Content Include="Images\Destinations\Nubra-Valley-ladakh.jpg" />
+    <Content Include="Images\Destinations\Pakherpora Shrine.jpg" />
+    <Content Include="Images\Destinations\pony-riding.jpg" />
+    <Content Include="Images\Destinations\poshwan_park.jpg" />
+    <Content Include="Images\Destinations\Raft the Rapids.jpg" />
+    <Content Include="Images\Destinations\Raghunath Temple.jpg" />
+    <Content Include="Images\Destinations\river_rafting_pahalgam.jpg" />
+    <Content Include="Images\Destinations\Sang-e-Safed Valley.jpg" />
+    <Content Include="Images\Destinations\Shalimar Bagh Spring.jpg" />
+    <Content Include="Images\Destinations\sheep_desktop.jpg" />
+    <Content Include="Images\Destinations\sheshnag_lake_pahalgam.jpg" />
+    <Content Include="Images\Destinations\shikara_desktop.jpg" />
+    <Content Include="Images\Destinations\sking_pahalgam.jpg" />
+    <Content Include="Images\Destinations\snowrides.jpg" />
+    <Content Include="Images\Destinations\sp_museum.jpg" />
+    <Content Include="Images\Destinations\Take one heck of a trek.jpg" />
+    <Content Include="Images\Destinations\Thajwas Glacier.jpg" />
+    <Content Include="Images\Destinations\Trek on the decked up trails.jpg" />
+    <Content Include="Images\Destinations\trekking_pahalgam.jpg" />
+    <Content Include="Images\Destinations\tulain_lake_pahalgam.jpg" />
+    <Content Include="Images\Destinations\Tulip garden Srinagar.jpg" />
+    <Content Include="Images\Destinations\turtuk.jpg" />
+    <Content Include="Images\Destinations\vaishno_devi_desktop.jpg" />
+    <Content Include="Images\Destinations\vaishno_devi_maa_desktop.jpg" />
+    <Content Include="Images\Destinations\verinag.jpg" />
+    <Content Include="Images\Destinations\verinag_desktop.jpg" />
+    <Content Include="Images\Destinations\willow_desktop.jpg" />
+    <Content Include="Images\Destinations\Yak.jpg" />
+    <Content Include="Images\Destinations\Zanskar.jpg" />
+    <Content Include="Images\g1.png" />
+    <Content Include="Images\g4.png" />
+    <Content Include="Images\HDImages\anatnag.jpg" />
+    <Content Include="Images\HDImages\background.jpg" />
+    <Content Include="Images\HDImages\camping.jpg" />
+    <Content Include="Images\HDImages\camping.png" />
+    <Content Include="Images\HDImages\dummy-image.jpg" />
+    <Content Include="Images\HDImages\explore-2.jpg" />
+    <Content Include="Images\HDImages\glorious_amarnath.jpg" />
+    <Content Include="Images\HDImages\gondola.jpg" />
+    <Content Include="Images\HDImages\gulmarg.jpg" />
+    <Content Include="Images\HDImages\gulmarg_desktop.jpg" />
+    <Content Include="Images\HDImages\gulmarg_mobile.jpg" />
+    <Content Include="Images\HDImages\horse_desktop.jpg" />
+    <Content Include="Images\HDImages\houseboat.jpg" />
+    <Content Include="Images\HDImages\Katra.jpg" />
+    <Content Include="Images\HDImages\ladakh.jpg" />
+    <Content Include="Images\HDImages\Lakes %281%29.jpg" />
+    <Content Include="Images\HDImages\Lake_home.jpg" />
+    <Content Include="Images\HDImages\Nature and Wildlife %281%29.jpg" />
+    <Content Include="Images\HDImages\pahalgam_desktop.jpg" />
+    <Content Include="Images\HDImages\Pahalgham.jpg" />
+    <Content Include="Images\HDImages\parks.jpg" />
+    <Content Include="Images\HDImages\places.jpg" />
+    <Content Include="Images\HDImages\Religious places.jpg" />
+    <Content Include="Images\HDImages\riverrafting.jpg" />
+    <Content Include="Images\HDImages\sheep_desktop.jpg" />
+    <Content Include="Images\HDImages\shikarariding.jpg" />
+    <Content Include="Images\HDImages\skiing.jpg" />
+    <Content Include="Images\HDImages\Sonamarg.jpg" />
+    <Content Include="Images\HDImages\sonmarg_desktop.jpg" />
+    <Content Include="Images\HDImages\srinagar-bg.jpg" />
+    <Content Include="Images\HDImages\Srinagar.jpg" />
+    <Content Include="Images\HDImages\srinagar_desktop.jpg" />
+    <Content Include="Images\HDImages\trekking.jpg" />
+    <Content Include="Images\HDImages\yousmarg.jpg" />
+    <Content Include="Images\hotel\hotel-0109.jpg" />
+    <Content Include="Images\hotel\hotel-0137.jpg" />
+    <Content Include="Images\hotel\hotel-01421.jpg" />
+    <Content Include="Images\hotel\hotel-01423.jpg" />
+    <Content Include="Images\hotel\hotel-01424.jpg" />
+    <Content Include="Images\hotel\hotel-01425.jpg" />
+    <Content Include="Images\hotel\hotel-01426.jpg" />
+    <Content Include="Images\hotel\hotel-02230.jpg" />
+    <Content Include="Images\hotel\hotel-02231.jpg" />
+    <Content Include="Images\hotel\hotel-02232.jpg" />
+    <Content Include="Images\hotel\hotel-0846.jpg" />
+    <Content Include="Images\hotel\hotel-0943.jpg" />
+    <Content Include="Images\hotel\hotel-09490.jpg" />
+    <Content Include="Images\hotel\hotel-09521.jpg" />
+    <Content Include="Images\hotel\hotel-09522.jpg" />
+    <Content Include="Images\hotel\hotel-09523.jpg" />
+    <Content Include="Images\hotel\hotel-09524.jpg" />
+    <Content Include="Images\hotel\hotel-09525.jpg" />
+    <Content Include="Images\hotel\hotel-09526.jpg" />
+    <Content Include="Images\hotel\hotel-09527.jpg" />
+    <Content Include="Images\hotel\hotel-11130.jpg" />
+    <Content Include="Images\hotel\hotel-11131.jpg" />
+    <Content Include="Images\hotel\hotel-11132.jpg" />
+    <Content Include="Images\hotel\hotel-11133.jpg" />
+    <Content Include="Images\hotel\hotel-11134.jpg" />
+    <Content Include="Images\hotel\hotel-11135.jpg" />
+    <Content Include="Images\hotel\hotel-1128.jpg" />
+    <Content Include="Images\hotel\hotel-12230.jpg" />
+    <Content Include="Images\hotel\hotel-12231.jpg" />
+    <Content Include="Images\hotel\hotel-12232.jpg" />
+    <Content Include="Images\hotel\hotel-12233.jpg" />
+    <Content Include="Images\hotel\hotel-12234.jpg" />
+    <Content Include="Images\hotel\hotel-12235.jpg" />
+    <Content Include="Images\hotel\hotel-12236.jpg" />
+    <Content Include="Images\hotel\hotel-1407.jpg" />
+    <Content Include="Images\hotel\hotel-2119.jpg" />
+    <Content Include="Images\hotel\hotel-21280.jpg" />
+    <Content Include="Images\hotel\hotel-21281.jpg" />
+    <Content Include="Images\hotel\hotel-21282.jpg" />
+    <Content Include="Images\hotel\hotel-21283.jpg" />
+    <Content Include="Images\hotel\hotel-21284.jpg" />
+    <Content Include="Images\hotel\hotel-21285.jpg" />
+    <Content Include="Images\hotel\hotel-22040.jpg" />
+    <Content Include="Images\hotel\hotel-22041.jpg" />
+    <Content Include="Images\hotel\hotel-22042.jpg" />
+    <Content Include="Images\hotel\hotel-22043.jpg" />
+    <Content Include="Images\hotel\hotel-22044.jpg" />
+    <Content Include="Images\hotel\hotel-2610.jpg" />
+    <Content Include="Images\hotel\hotel-28460.jpg" />
+    <Content Include="Images\hotel\hotel-28461.jpg" />
+    <Content Include="Images\hotel\hotel-284610.jpg" />
+    <Content Include="Images\hotel\hotel-284611.jpg" />
+    <Content Include="Images\hotel\hotel-284612.jpg" />
+    <Content Include="Images\hotel\hotel-284613.jpg" />
+    <Content Include="Images\hotel\hotel-284614.jpg" />
+    <Content Include="Images\hotel\hotel-284615.jpg" />
+    <Content Include="Images\hotel\hotel-28462.jpg" />
+    <Content Include="Images\hotel\hotel-28463.jpg" />
+    <Content Include="Images\hotel\hotel-28464.jpg" />
+    <Content Include="Images\hotel\hotel-28465.jpg" />
+    <Content Include="Images\hotel\hotel-28466.jpg" />
+    <Content Include="Images\hotel\hotel-28467.jpg" />
+    <Content Include="Images\hotel\hotel-28468.jpg" />
+    <Content Include="Images\hotel\hotel-28469.jpg" />
+    <Content Include="Images\hotel\hotel-2915.jpg" />
+    <Content Include="Images\hotel\hotel-3315.jpg" />
+    <Content Include="Images\hotel\hotel-33520.jpg" />
+    <Content Include="Images\hotel\hotel-33521.jpg" />
+    <Content Include="Images\hotel\hotel-33522.jpg" />
+    <Content Include="Images\hotel\hotel-33523.jpg" />
+    <Content Include="Images\hotel\hotel-33524.jpg" />
+    <Content Include="Images\hotel\hotel-33525.jpg" />
+    <Content Include="Images\hotel\hotel-33526.jpg" />
+    <Content Include="Images\hotel\hotel-35100.jpg" />
+    <Content Include="Images\hotel\hotel-35101.jpg" />
+    <Content Include="Images\hotel\hotel-35102.jpg" />
+    <Content Include="Images\hotel\hotel-35103.jpg" />
+    <Content Include="Images\hotel\hotel-35104.jpg" />
+    <Content Include="Images\hotel\hotel-35105.jpg" />
+    <Content Include="Images\hotel\hotel-35106.jpg" />
+    <Content Include="Images\hotel\hotel-35107.jpg" />
+    <Content Include="Images\hotel\hotel-35108.jpg" />
+    <Content Include="Images\hotel\hotel-35109.jpg" />
+    <Content Include="Images\hotel\hotel-3726.gif" />
+    <Content Include="Images\hotel\hotel-38410.gif" />
+    <Content Include="Images\hotel\hotel-38411.gif" />
+    <Content Include="Images\hotel\hotel-39160.gif" />
+    <Content Include="Images\hotel\hotel-44001.jpg" />
+    <Content Include="Images\hotel\hotel-44002.jpg" />
+    <Content Include="Images\hotel\hotel-44003.jpg" />
+    <Content Include="Images\hotel\hotel-44004.jpg" />
+    <Content Include="Images\hotel\hotel-4542.jpg" />
+    <Content Include="Images\hotel\hotel-46001.jpg" />
+    <Content Include="Images\hotel\hotel-46002.jpg" />
+    <Content Include="Images\hotel\hotel-46003.jpg" />
+    <Content Include="Images\hotel\hotel-46004.jpg" />
+    <Content Include="Images\hotel\hotel-46005.jpg" />
+    <Content Include="Images\hotel\hotel-46006.jpg" />
+    <Content Include="Images\hotel\hotel-46007.jpg" />
+    <Content Include="Images\hotel\hotel-46090.jpg" />
+    <Content Include="Images\hotel\hotel-46091.jpg" />
+    <Content Include="Images\hotel\hotel-46092.jpg" />
+    <Content Include="Images\hotel\hotel-461110.jpg" />
+    <Content Include="Images\hotel\hotel-461111.jpg" />
+    <Content Include="Images\hotel\hotel-461112.jpg" />
+    <Content Include="Images\hotel\hotel-461113.jpg" />
+    <Content Include="Images\hotel\hotel-461114.jpg" />
+    <Content Include="Images\hotel\hotel-461115.jpg" />
+    <Content Include="Images\hotel\hotel-461116.jpg" />
+    <Content Include="Images\hotel\hotel-46113.jpg" />
+    <Content Include="Images\hotel\hotel-46114.jpg" />
+    <Content Include="Images\hotel\hotel-46115.jpg" />
+    <Content Include="Images\hotel\hotel-46116.jpg" />
+    <Content Include="Images\hotel\hotel-46117.jpg" />
+    <Content Include="Images\hotel\hotel-46118.jpg" />
+    <Content Include="Images\hotel\hotel-46119.jpg" />
+    <Content Include="Images\hotel\hotel-46420.jpg" />
+    <Content Include="Images\hotel\hotel-46421.jpg" />
+    <Content Include="Images\hotel\hotel-46422.jpg" />
+    <Content Include="Images\hotel\hotel-46423.jpg" />
+    <Content Include="Images\hotel\hotel-46424.jpg" />
+    <Content Include="Images\hotel\hotel-46425.jpg" />
+    <Content Include="Images\hotel\hotel-46426.jpg" />
+    <Content Include="Images\hotel\hotel-47140.jpg" />
+    <Content Include="Images\hotel\hotel-47141.jpg" />
+    <Content Include="Images\hotel\hotel-5157.jpg" />
+    <Content Include="Images\hotel\hotel-5247.jpg" />
+    <Content Include="Images\hotel\hotel-54031.jpg" />
+    <Content Include="Images\hotel\hotel-54032.jpg" />
+    <Content Include="Images\hotel\hotel-54033.jpg" />
+    <Content Include="Images\hotel\hotel-54034.jpg" />
+    <Content Include="Images\hotel\hotel-5633.jpg" />
+    <Content Include="Images\img1.jpg" />
+    <Content Include="Images\img2.jpg" />
+    <Content Include="Images\img3.jpg" />
+    <Content Include="Images\img4.jpg" />
+    <Content Include="Images\Khair Tour nad Travels.png" />
+    <Content Include="Images\ladakh.jpg" />
+    <Content Include="Images\NewImage\35.png" />
+    <Content Include="Images\NewImage\36.png" />
+    <Content Include="Images\NewImage\37.png" />
+    <Content Include="Images\NewImage\38.png" />
+    <Content Include="Images\NewImage\39.png" />
+    <Content Include="Images\NewImage\40.png" />
+    <Content Include="Images\NewImage\41.png" />
+    <Content Include="Images\NewImage\42.png" />
+    <Content Include="Images\NewImage\43.png" />
+    <Content Include="Images\NewImage\Babareshi.jpg" />
+    <Content Include="Images\NewImage\cafeigloo.jpg" />
+    <Content Include="Images\NewImage\ChariSharef.jpg" />
+    <Content Include="Images\NewImage\dallake.jpg" />
+    <Content Include="Images\NewImage\doodpathri.jpg" />
+    <Content Include="Images\NewImage\Doodpathrii2.jpg" />
+    <Content Include="Images\NewImage\Drung.jpg" />
+    <Content Include="Images\NewImage\kheerbhawani.jpg" />
+    <Content Include="Images\NewImage\mahrani temple.jpg" />
+    <Content Include="Images\NewImage\payment scanner.jpeg" />
+    <Content Include="Images\NewImage\Ro.jpg" />
+    <Content Include="Images\packageImage\31.jpg" />
+    <Content Include="Images\packageImage\camp.jpg" />
+    <Content Include="Images\packageImage\cave.jpeg" />
+    <Content Include="Images\packageImage\dik.jpg" />
+    <Content Include="Images\packageImage\dood.jpg" />
+    <Content Include="Images\packageImage\dood2.jpg" />
+    <Content Include="Images\packageImage\drang.jpg" />
+    <Content Include="Images\packageImage\Fishing.jpg" />
+    <Content Include="Images\packageImage\FortuneResort.jpeg" />
+    <Content Include="Images\packageImage\fourpoints.jpg" />
+    <Content Include="Images\packageImage\gandola.jpg" />
+    <Content Include="Images\packageImage\golf.jpg" />
+    <Content Include="Images\packageImage\gulmarggolf.jpeg" />
+    <Content Include="Images\packageImage\honeymoon.jpg" />
+    <Content Include="Images\packageImage\hotel1.png" />
+    <Content Include="Images\packageImage\hotel2.jpg" />
+    <Content Include="Images\packageImage\hotel2.png" />
+    <Content Include="Images\packageImage\hotel3.png" />
+    <Content Include="Images\packageImage\hotel4.png" />
+    <Content Include="Images\packageImage\hotel5.png" />
+    <Content Include="Images\packageImage\HotelClark.jpg" />
+    <Content Include="Images\packageImage\Hotelclarks.jpg" />
+    <Content Include="Images\packageImage\HotelRaddison.jpg" />
+    <Content Include="Images\packageImage\Hotelvivanta.jpeg" />
+    <Content Include="Images\packageImage\kargil.jpeg" />
+    <Content Include="Images\packageImage\kashmiGolf.jpeg" />
+    <Content Include="Images\packageImage\kish3.jpg" />
+    <Content Include="Images\packageImage\kish4.jpg" />
+    <Content Include="Images\packageImage\kistwar.jpeg" />
+    <Content Include="Images\packageImage\kistwar2.jpg" />
+    <Content Include="Images\packageImage\ladakh.jpg" />
+    <Content Include="Images\packageImage\ladakh1.jpg" />
+    <Content Include="Images\packageImage\manapass.jpeg" />
+    <Content Include="Images\packageImage\mini.jpeg" />
+    <Content Include="Images\packageImage\mush.jpg" />
+    <Content Include="Images\packageImage\pani.jpg" />
+    <Content Include="Images\packageImage\para.jpg" />
+    <Content Include="Images\packageImage\paragliding.jpg" />
+    <Content Include="Images\packageImage\parkach.jpg" />
+    <Content Include="Images\packageImage\patnitop.jpg" />
+    <Content Include="Images\packageImage\patnitop2.jpg" />
+    <Content Include="Images\packageImage\pony.jpg" />
+    <Content Include="Images\packageImage\royal.jpeg" />
+    <Content Include="Images\packageImage\san.jpg" />
+    <Content Include="Images\packageImage\shafat.jpg" />
+    <Content Include="Images\packageImage\shikara.jpg" />
+    <Content Include="Images\packageImage\skat1.jpeg" />
+    <Content Include="Images\packageImage\skat2.jpeg" />
+    <Content Include="Images\packageImage\skat3.jpg" />
+    <Content Include="Images\packageImage\skat4.jpg" />
+    <Content Include="Images\packageImage\skating.jpg" />
+    <Content Include="Images\packageImage\suru.jpeg" />
+    <Content Include="Images\packageImage\suruvalley.jpg" />
+    <Content Include="Images\packageImage\the-vintage-gulmarg-5912-1.jpg" />
+    <Content Include="Images\packageImage\vais.jpg" />
+    <Content Include="Images\packageImage\vaish.jpg" />
+    <Content Include="Images\payment scanner.jpeg" />
+    <Content Include="Ladakh.aspx" />
+    <Content Include="NubraValley.aspx" />
+    <Content Include="Packages.aspx" />
+    <Content Include="Pahalgam.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Sonmarg.aspx" />
+    <Content Include="Yousmarg.aspx" />
+    <Content Include="Images\HDImages\gulmarg_desktop.webp" />
+    <Content Include="Images\HDImages\gulmarg_mobile.webp" />
+    <Content Include="Images\HDImages\pahalgam_desktop.webp" />
+    <Content Include="Images\HDImages\sonamarg_desktop.webp" />
+    <Content Include="Images\HDImages\sonamarg_mobile.webp" />
+    <Content Include="Images\HDImages\srinagar_desktop.webp" />
+    <Content Include="Images\HDImages\srinagar_mobile.webp" />
+    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
+    <Content Include="Content\css\Styles.css" />
+    <Content Include="Scripts\jquery-3.7.0.js" />
+    <Content Include="Scripts\jquery-3.7.0.min.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.js" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\Styles.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="Srinagar.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="CarRental.aspx.cs">
+      <DependentUpon>CarRental.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarRental.aspx.designer.cs">
+      <DependentUpon>CarRental.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoodPathri.aspx.cs">
+      <DependentUpon>DoodPathri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoodPathri.aspx.designer.cs">
+      <DependentUpon>DoodPathri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery.aspx.designer.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Gulmarg.aspx.cs">
+      <DependentUpon>Gulmarg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gulmarg.aspx.designer.cs">
+      <DependentUpon>Gulmarg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ladakh.aspx.cs">
+      <DependentUpon>Ladakh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ladakh.aspx.designer.cs">
+      <DependentUpon>Ladakh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NubraValley.aspx.cs">
+      <DependentUpon>NubraValley.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NubraValley.aspx.designer.cs">
+      <DependentUpon>NubraValley.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Packages.aspx.cs">
+      <DependentUpon>Packages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Packages.aspx.designer.cs">
+      <DependentUpon>Packages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pahalgam.aspx.cs">
+      <DependentUpon>Pahalgam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pahalgam.aspx.designer.cs">
+      <DependentUpon>Pahalgam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sonmarg.aspx.cs">
+      <DependentUpon>Sonmarg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sonmarg.aspx.designer.cs">
+      <DependentUpon>Sonmarg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Srinagar.aspx.cs">
+      <DependentUpon>Srinagar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Srinagar.aspx.designer.cs">
+      <DependentUpon>Srinagar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Yousmarg.aspx.cs">
+      <DependentUpon>Yousmarg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yousmarg.aspx.designer.cs">
+      <DependentUpon>Yousmarg.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.0.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55416</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44353/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('packages\Microsoft.TypeScript.MSBuild.5.6.2\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
